@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cuidapet/app/core/ui/extensions/screen_util_extension.dart';
 
 class AuthHomePage extends StatefulWidget {
   const AuthHomePage({Key? key}) : super(key: key);
@@ -10,11 +11,13 @@ class AuthHomePage extends StatefulWidget {
 class _AuthHomePageState extends State<AuthHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(''),
+    return Center(
+      child: Image.asset(
+        'assets/images/logo.png',
+        width: 162.w,
+        height: 130.h,
+        fit: BoxFit.contain,
       ),
-      body: Container(),
     );
   }
 }
