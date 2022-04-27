@@ -17,6 +17,8 @@ Este projeto consiste em um aplicativo desenvolvido no curso Academia do Flutter
   - Organização de Pastas do Projeto
   - Definição dos Packages Utilizados.
   - Configuração dos Modulos Iniciais (Flutter Modular)  
+  - Encapsulamento do ScreenUtil 
+
  # :iphone: Layout do App
   
  
