@@ -8,6 +8,7 @@ Este projeto consiste em um aplicativo desenvolvido no curso Academia do Flutter
   * Mobx Package
   * Flutter Modular
   * MySQL
+  * Backend Dart - Shelf
   * VSCode IDE
 
   
