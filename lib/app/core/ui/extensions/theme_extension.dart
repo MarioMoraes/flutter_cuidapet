@@ -6,4 +6,5 @@ extension ThemeExtension on BuildContext {
   Color get primaryColorLight => Theme.of(this).primaryColorLight;
   Color get accentColor => Theme.of(this).colorScheme.secondary;
   TextTheme get textTheme => Theme.of(this).textTheme;
+  AppBarTheme get appBarTheme => Theme.of(this).appBarTheme;
 }
