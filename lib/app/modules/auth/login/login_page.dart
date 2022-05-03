@@ -7,6 +7,9 @@ import 'package:flutter_cuidapet/app/core/widgets/default_button.dart';
 import 'package:flutter_cuidapet/app/core/widgets/rounded_button_social.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+part 'widgets/login_form.dart';
+part 'widgets/login_button_register.dart';
+
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
 
@@ -27,82 +30,44 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                CustomTextFormField(
-                  hint: 'Login',
-                  controller: _emailEC,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Campo Obrigatorio';
-                    }
-                    return null;
-                  },
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const CustomTextFormField(
-                  hint: 'Senha',
-                  obscure: true,
-                ),
+                const _LoginForm(),
                 const SizedBox(
                   height: 20,
                 ),
-                DefaultButton(
-                  label: 'Entrar',
-                  height: 40,
-                  onPressed: () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        backgroundColor: context.primaryColorDark,
-                        content: const Text('Click!'),
-                      ),
-                    );
-                  },
-                ),
+                _separatorOR(),
                 const SizedBox(
-                  height: 40,
+                  height: 20,
                 ),
-                Wrap(
-                  spacing: 10,
-                  runSpacing: 10,
-                  runAlignment: WrapAlignment.center,
-                  alignment: WrapAlignment.center,
-                  direction: Axis.horizontal,
-                  children: [
-                    RoundedButtonSocial(
-                      onTap: () {},
-                      icon: MyIcons.facebook,
-                      title: 'Facebook',
-                      color: Colors.blue,
-                      width: 170.w,
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    RoundedButtonSocial(
-                      onTap: () {},
-                      icon: MyIcons.google,
-                      title: 'Google',
-                      color: Colors.red.shade500,
-                      width: 170.w,
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    RoundedButtonSocial(
-                      onTap: () {},
-                      icon: MyIcons.envelope,
-                      title: 'Cadastre-se',
-                      color: Colors.purple,
-                      width: 170.w,
-                    ),
-                  ],
-                ),
+                const _LoginButtonRegister(),
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+
+  Widget _separatorOR() {
+    return Row(
+      children: [
+        const Expanded(
+          child: Divider(
+            thickness: 2,
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Text(
+            'OU',
+            style: TextStyle(fontSize: 15.sp),
+          ),
+        ),
+        const Expanded(
+          child: Divider(
+            thickness: 2,
+          ),
+        ),
+      ],
     );
   }
 }

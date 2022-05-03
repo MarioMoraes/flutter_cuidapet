@@ -23,7 +23,7 @@ class RoundedButtonSocial extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: width.w,
-        height: 45.h,
+        height: 50.h,
         padding: const EdgeInsets.symmetric(horizontal: 8),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
