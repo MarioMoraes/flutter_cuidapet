@@ -8,9 +8,7 @@ class AppModule extends Module {
   final List<Bind> binds = [];
 
   @override
-  List<Module> get imports => [
-        CoreModule(),
-      ];
+  List<Module> get imports => [CoreModule()];
 
   @override
   final List<ModularRoute> routes = [

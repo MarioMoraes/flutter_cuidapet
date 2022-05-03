@@ -31,7 +31,6 @@ flutter:
     - assets/images/
 
   fonts:
-    - family: CuidaPetIcons
+    - family:  MyIcons
       fonts:
-        - asset: assets/fonts/CuidapetIcons.ttf
-  
+       - asset: assets/fonts/MyIcons.ttf
