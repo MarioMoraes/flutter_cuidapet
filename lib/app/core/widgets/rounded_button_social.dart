@@ -14,7 +14,7 @@ class RoundedButtonSocial extends StatelessWidget {
     required this.icon,
     required this.title,
     required this.color,
-    required this.width,
+    this.width = 120,
   }) : super(key: key);
 
   @override
@@ -22,8 +22,8 @@ class RoundedButtonSocial extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        width: width,
-        height: 45.w,
+        width: width.w,
+        height: 45.h,
         padding: const EdgeInsets.symmetric(horizontal: 8),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
@@ -53,7 +53,7 @@ class RoundedButtonSocial extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
-                  fontSize: 15.sp,
+                  fontSize: 13.sp,
                 ),
               ),
             ),

@@ -34,3 +34,15 @@ flutter:
     - family:  MyIcons
       fonts:
        - asset: assets/fonts/MyIcons.ttf
+    
+    - family: Lexend
+      fonts:
+        - asset: assets/fonts/LexendDeca-Black.ttf
+        - asset: assets/fonts/LexendDeca-Bold.ttf
+        - asset: assets/fonts/LexendDeca-ExtraBold.ttf
+        - asset: assets/fonts/LexendDeca-ExtraLight.ttf
+        - asset: assets/fonts/LexendDeca-Light.ttf
+        - asset: assets/fonts/LexendDeca-Medium.ttf
+        - asset: assets/fonts/LexendDeca-Regular.ttf
+        - asset: assets/fonts/LexendDeca-SemiBold.ttf
+        - asset: assets/fonts/LexendDeca-Thin.ttf       

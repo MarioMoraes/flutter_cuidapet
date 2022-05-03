@@ -15,5 +15,6 @@ class UiConfig {
         appBarTheme: const AppBarTheme(
           backgroundColor: Color(0xFFA8CE4B),
         ),
+        fontFamily: 'Lexend',
       );
 }

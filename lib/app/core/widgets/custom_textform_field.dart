@@ -25,15 +25,16 @@ class CustomTextFormField extends StatelessWidget {
         return TextFormField(
           controller: controller,
           validator: validator,
-          obscureText: _obscureVN.value,
+          obscureText: !_obscureVN.value,
           decoration: InputDecoration(
+            isDense: true,
             hintText: hint,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
-              borderSide: const BorderSide(color: Colors.grey),
+              borderSide: const BorderSide(color: Colors.black),
             ),
             errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
@@ -45,7 +46,7 @@ class CustomTextFormField extends StatelessWidget {
                       _obscureVN.value = !_obscureVN.value;
                     },
                     icon: Icon(
-                      _obscureVN.value ? Icons.lock : Icons.lock_open,
+                      _obscureVN.value ? Icons.lock_open : Icons.lock,
                       color: context.primaryColor,
                     ),
                   )
