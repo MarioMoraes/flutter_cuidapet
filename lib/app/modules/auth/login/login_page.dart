@@ -11,36 +11,30 @@ part 'widgets/login_form.dart';
 part 'widgets/login_button_register.dart';
 
 class LoginPage extends StatelessWidget {
-  LoginPage({Key? key}) : super(key: key);
-
-  final _formKey = GlobalKey<FormState>();
-  final _emailEC = TextEditingController();
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(top: 100, left: 20, right: 20),
-        child: Form(
-          key: _formKey,
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                const CuidaPetLogo(),
-                const SizedBox(
-                  height: 30,
-                ),
-                const _LoginForm(),
-                const SizedBox(
-                  height: 20,
-                ),
-                _separatorOR(),
-                const SizedBox(
-                  height: 20,
-                ),
-                const _LoginButtonRegister(),
-              ],
-            ),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const CuidaPetLogo(),
+              const SizedBox(
+                height: 30,
+              ),
+              const _LoginForm(),
+              const SizedBox(
+                height: 40,
+              ),
+              _separatorOR(),
+              const SizedBox(
+                height: 40,
+              ),
+              const _LoginButtonRegister(),
+            ],
           ),
         ),
       ),

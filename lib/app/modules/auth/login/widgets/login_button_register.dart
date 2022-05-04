@@ -11,7 +11,7 @@ class _LoginButtonRegisterState extends State<_LoginButtonRegister> {
   @override
   Widget build(BuildContext context) {
     return Wrap(
-      spacing: 10,
+      spacing: 8,
       runSpacing: 10,
       runAlignment: WrapAlignment.center,
       alignment: WrapAlignment.center,
@@ -22,7 +22,7 @@ class _LoginButtonRegisterState extends State<_LoginButtonRegister> {
           icon: MyIcons.facebook,
           title: 'Facebook',
           color: Colors.blue,
-          width: 170.w,
+          width: 160.w,
         ),
         const SizedBox(
           height: 20,
@@ -32,7 +32,7 @@ class _LoginButtonRegisterState extends State<_LoginButtonRegister> {
           icon: MyIcons.google,
           title: 'Google',
           color: Colors.red.shade500,
-          width: 170.w,
+          width: 160.w,
         ),
         const SizedBox(
           height: 20,
@@ -42,7 +42,7 @@ class _LoginButtonRegisterState extends State<_LoginButtonRegister> {
           icon: MyIcons.envelope,
           title: 'Cadastro',
           color: context.primaryColorDark,
-          width: 170.w,
+          width: 160.w,
         ),
       ],
     );

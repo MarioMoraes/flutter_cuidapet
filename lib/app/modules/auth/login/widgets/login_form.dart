@@ -8,12 +8,15 @@ class _LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<_LoginForm> {
+  final _formKey = GlobalKey<FormState>();
+
   final _emailEC = TextEditingController();
   final _senhaEC = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: _formKey,
       child: Column(
         children: [
           CustomTextFormField(
