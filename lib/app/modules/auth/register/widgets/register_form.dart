@@ -1,17 +1,26 @@
-part of '../login_page.dart';
+part of '../register_page.dart';
 
-class _LoginForm extends StatefulWidget {
-  const _LoginForm({Key? key}) : super(key: key);
+class _RegisterForm extends StatefulWidget {
+  const _RegisterForm({Key? key}) : super(key: key);
 
   @override
-  _LoginFormState createState() => _LoginFormState();
+  _RegisterFormState createState() => _RegisterFormState();
 }
 
-class _LoginFormState extends State<_LoginForm> {
+class _RegisterFormState extends State<_RegisterForm> {
   final _formKey = GlobalKey<FormState>();
 
   final _emailEC = TextEditingController();
   final _senhaEC = TextEditingController();
+  final _confirmaEC = TextEditingController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    _emailEC.dispose();
+    _senhaEC.dispose();
+    _confirmaEC.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,10 +47,18 @@ class _LoginFormState extends State<_LoginForm> {
             obscure: true,
           ),
           const SizedBox(
+            height: 10,
+          ),
+          CustomTextFormField(
+            controller: _confirmaEC,
+            hint: 'Confirma Senha',
+            obscure: true,
+          ),
+          const SizedBox(
             height: 20,
           ),
           DefaultButton(
-            label: 'Entrar',
+            label: 'Cadastrar',
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(

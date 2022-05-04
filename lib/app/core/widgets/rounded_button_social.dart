@@ -24,7 +24,7 @@ class RoundedButtonSocial extends StatelessWidget {
       child: Container(
         width: width.w,
         height: 50.h,
-        padding: const EdgeInsets.symmetric(horizontal: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: color,

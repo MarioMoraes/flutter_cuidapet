@@ -38,7 +38,9 @@ class _LoginButtonRegisterState extends State<_LoginButtonRegister> {
           height: 20,
         ),
         RoundedButtonSocial(
-          onTap: () {},
+          onTap: () {
+            Modular.to.pushNamed('/auth/register');
+          },
           icon: MyIcons.envelope,
           title: 'Cadastro',
           color: context.primaryColorDark,
