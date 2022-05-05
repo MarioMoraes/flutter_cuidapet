@@ -23,10 +23,7 @@ class AppWidget extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: UiConfig.title,
         theme: UiConfig.theme,
-        builder: (context, child) {
-          ScreenUtil.setContext(context);
-          return asuka.builder(context, child);
-        },
+        builder: asuka.builder,
       ),
     );
   }

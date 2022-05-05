@@ -16,6 +16,8 @@ dependencies:
   asuka: ^2.0.0+1
   dio: ^4.0.6
   flutter_screenutil: ^5.5.0
+  firebase_auth: ^3.3.5
+  firebase_core: ^1.11.0
 
 dev_dependencies:
   flutter_test:
