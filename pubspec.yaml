@@ -18,6 +18,9 @@ dependencies:
   flutter_screenutil: ^5.5.0
   firebase_auth: ^3.3.5
   firebase_core: ^1.11.0
+  flutter_dotenv: ^5.0.2
+  firebase_remote_config: ^2.0.6
+
 
 dev_dependencies:
   flutter_test:
@@ -31,6 +34,8 @@ flutter:
 
   assets:
     - assets/images/
+    - .env
+
 
   fonts:
     - family:  MyIcons
