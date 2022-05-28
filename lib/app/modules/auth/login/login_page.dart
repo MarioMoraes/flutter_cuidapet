@@ -8,8 +8,8 @@ import 'package:flutter_cuidapet/app/core/widgets/rounded_button_social.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-part 'widgets/login_form.dart';
 part 'widgets/login_button_register.dart';
+part 'widgets/login_form.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);

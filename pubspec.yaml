@@ -20,6 +20,7 @@ dependencies:
   firebase_core: ^1.11.0
   flutter_dotenv: ^5.0.2
   firebase_remote_config: ^2.0.6
+  logger: ^1.1.0  
 
 
 dev_dependencies:
