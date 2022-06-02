@@ -46,7 +46,7 @@ class _RegisterFormState
             obscureText: true,
             validator: Validatorless.multiple([
               Validatorless.required('Senha Obrigatória!'),
-              Validatorless.email('Senha Deve Ter Pelo Menos 6 Caracteres'),
+              Validatorless.min(6, 'Senha Deve Ter Pelo Menos 6 Caracteres'),
             ]),
           ),
           const SizedBox(
@@ -57,7 +57,7 @@ class _RegisterFormState
             obscureText: true,
             validator: Validatorless.multiple([
               Validatorless.required('Confirma Senha Obrigatório!'),
-              Validatorless.email('Senha Deve Ter Pelo Menos 6 Caracteres'),
+              Validatorless.min(6, 'Senha Deve Ter Pelo Menos 6 Caracteres'),
               Validatorless.compare(
                   _senhaEC, 'Senhas Não Coincidem! Tente Novamente!')
             ]),
@@ -70,7 +70,8 @@ class _RegisterFormState
             onPressed: () {
               final formValid = _formKey.currentState?.validate() ?? false;
               if (formValid) {
-                controller.register(login: _loginEC.text, senha: _senhaEC.text);
+                controller.register(
+                    email: _loginEC.text, password: _senhaEC.text);
               }
             },
           ),

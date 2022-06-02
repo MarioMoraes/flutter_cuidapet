@@ -11,8 +11,10 @@ import 'register/register_module.dart';
 class AuthModule extends Module {
   @override
   final List<Bind> binds = [
-    Bind.lazySingleton<UserRepository>((i) => UserRepositoryImpl()),
-    Bind.lazySingleton<UserService>((i) => UserServiceImpl()),
+    Bind.lazySingleton<UserRepository>(
+        (i) => UserRepositoryImpl(appLogger: i(), restClient: i())),
+    Bind.lazySingleton<UserService>(
+        (i) => UserServiceImpl(appLogger: i(), userRepository: i())),
   ];
 
   @override

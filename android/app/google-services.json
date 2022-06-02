@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1050226441344-rlj8qt21834dr2eu86076junbtl4mqhk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.offices.flutter_cuidapet",
+            "certificate_hash": "f165b960d6c1ea22cd02e8ce0fc5aa644f17e6a0"
+          }
+        },
+        {
           "client_id": "1050226441344-pgks8uk14hqiv1007arte7ueb2s2731k.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,6 +37,13 @@
             {
               "client_id": "1050226441344-pgks8uk14hqiv1007arte7ueb2s2731k.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1050226441344-fr0phtlqmiiv0tigbckrhtjup4qc82l0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.offices.flutterCuidapet"
+              }
             }
           ]
         }
