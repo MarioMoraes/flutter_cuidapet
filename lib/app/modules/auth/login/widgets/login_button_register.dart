@@ -18,7 +18,9 @@ class _LoginButtonRegisterState extends State<_LoginButtonRegister> {
       direction: Axis.horizontal,
       children: [
         RoundedButtonSocial(
-          onTap: () {},
+          onTap: () {
+            Messages.alert('Alert Message');
+          },
           icon: MyIcons.facebook,
           title: 'Facebook',
           color: Colors.blue,
@@ -28,7 +30,9 @@ class _LoginButtonRegisterState extends State<_LoginButtonRegister> {
           height: 20,
         ),
         RoundedButtonSocial(
-          onTap: () {},
+          onTap: () {
+            Messages.info('Info Message');
+          },
           icon: MyIcons.google,
           title: 'Google',
           color: Colors.red.shade500,

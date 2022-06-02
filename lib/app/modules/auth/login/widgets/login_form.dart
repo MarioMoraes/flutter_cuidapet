@@ -35,7 +35,7 @@ class _LoginFormState extends State<_LoginForm> {
           CustomTextFormField(
             controller: _senhaEC,
             hint: 'Senha',
-            obscure: true,
+            obscureText: true,
           ),
           const SizedBox(
             height: 20,
@@ -43,12 +43,8 @@ class _LoginFormState extends State<_LoginForm> {
           DefaultButton(
             label: 'Entrar',
             onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  backgroundColor: context.primaryColorDark,
-                  content: const Text('Click!'),
-                ),
-              );
+              Loader.show();
+              Future.delayed(const Duration(seconds: 3), () => Loader.hide());
             },
           ),
         ],

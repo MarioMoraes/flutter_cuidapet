@@ -7,19 +7,19 @@ class _RegisterForm extends StatefulWidget {
   _RegisterFormState createState() => _RegisterFormState();
 }
 
-class _RegisterFormState extends State<_RegisterForm> {
+class _RegisterFormState
+    extends ModularState<_RegisterForm, RegisterController> {
   final _formKey = GlobalKey<FormState>();
 
-  final _emailEC = TextEditingController();
+  final _loginEC = TextEditingController();
   final _senhaEC = TextEditingController();
-  final _confirmaEC = TextEditingController();
 
   @override
   void dispose() {
-    super.dispose();
-    _emailEC.dispose();
+    _loginEC.dispose();
     _senhaEC.dispose();
-    _confirmaEC.dispose();
+
+    super.dispose();
   }
 
   @override
@@ -30,13 +30,12 @@ class _RegisterFormState extends State<_RegisterForm> {
         children: [
           CustomTextFormField(
             hint: 'Login',
-            controller: _emailEC,
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Campo Obrigatorio';
-              }
-              return null;
-            },
+            controller: _loginEC,
+            obscureText: false,
+            validator: Validatorless.multiple([
+              Validatorless.required('Login Obrigatório!'),
+              Validatorless.email('Login Deverá Ser Um Email Válido'),
+            ]),
           ),
           const SizedBox(
             height: 10,
@@ -44,15 +43,24 @@ class _RegisterFormState extends State<_RegisterForm> {
           CustomTextFormField(
             controller: _senhaEC,
             hint: 'Senha',
-            obscure: true,
+            obscureText: true,
+            validator: Validatorless.multiple([
+              Validatorless.required('Senha Obrigatória!'),
+              Validatorless.email('Senha Deve Ter Pelo Menos 6 Caracteres'),
+            ]),
           ),
           const SizedBox(
             height: 10,
           ),
           CustomTextFormField(
-            controller: _confirmaEC,
             hint: 'Confirma Senha',
-            obscure: true,
+            obscureText: true,
+            validator: Validatorless.multiple([
+              Validatorless.required('Confirma Senha Obrigatório!'),
+              Validatorless.email('Senha Deve Ter Pelo Menos 6 Caracteres'),
+              Validatorless.compare(
+                  _senhaEC, 'Senhas Não Coincidem! Tente Novamente!')
+            ]),
           ),
           const SizedBox(
             height: 20,
@@ -60,12 +68,10 @@ class _RegisterFormState extends State<_RegisterForm> {
           DefaultButton(
             label: 'Cadastrar',
             onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  backgroundColor: context.primaryColorDark,
-                  content: const Text('Click!'),
-                ),
-              );
+              final formValid = _formKey.currentState?.validate() ?? false;
+              if (formValid) {
+                controller.register(login: _loginEC.text, senha: _senhaEC.text);
+              }
             },
           ),
         ],

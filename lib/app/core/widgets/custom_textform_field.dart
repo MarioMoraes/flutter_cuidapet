@@ -3,55 +3,56 @@ import 'package:flutter_cuidapet/app/core/ui/extensions/theme_extension.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final String hint;
-  final bool obscure;
+  final bool obscureText;
+  final ValueNotifier<bool> _obscureTextVN;
   final TextEditingController? controller;
-  final FormFieldValidator? validator;
+  final FormFieldValidator<String>? validator;
 
-  const CustomTextFormField(
+  CustomTextFormField(
       {Key? key,
       required this.hint,
-      this.obscure = false,
+      this.obscureText = false,
       this.controller,
       this.validator})
-      : super(key: key);
+      : _obscureTextVN = ValueNotifier<bool>(obscureText),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var _obscureVN = ValueNotifier<bool>(false);
-
-    return ValueListenableBuilder(
-      valueListenable: _obscureVN,
-      builder: (_, obscureVN, child) {
+    return ValueListenableBuilder<bool>(
+      valueListenable: _obscureTextVN,
+      builder: (_, obscureTextVNValue, child) {
         return TextFormField(
           controller: controller,
           validator: validator,
-          obscureText: !_obscureVN.value,
+          obscureText: obscureTextVNValue,
           decoration: InputDecoration(
-            isDense: true,
-            hintText: hint,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15),
-              borderSide: const BorderSide(color: Colors.black),
-            ),
-            errorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15),
-              borderSide: const BorderSide(color: Colors.red),
-            ),
-            suffixIcon: obscure
-                ? IconButton(
-                    onPressed: () {
-                      _obscureVN.value = !_obscureVN.value;
-                    },
-                    icon: Icon(
-                      _obscureVN.value ? Icons.lock_open : Icons.lock,
-                      color: context.primaryColor,
-                    ),
-                  )
-                : null,
-          ),
+              labelText: hint,
+              labelStyle: const TextStyle(color: Colors.black, fontSize: 15.0),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15.0),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15.0),
+                gapPadding: 0,
+                borderSide: const BorderSide(color: Colors.grey),
+              ),
+              focusedErrorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15.0),
+                gapPadding: 0,
+                borderSide: const BorderSide(color: Colors.red),
+              ),
+              suffixIcon: obscureText
+                  ? IconButton(
+                      onPressed: () {
+                        _obscureTextVN.value = !obscureTextVNValue;
+                      },
+                      icon: Icon(
+                        obscureTextVNValue ? Icons.lock : Icons.lock_open,
+                        color: context.primaryColor,
+                      ),
+                    )
+                  : null),
         );
       },
     );
